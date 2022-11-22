@@ -1,0 +1,35 @@
+body {
+  background-color: bisque;
+}
+
+footer {
+  background-color: blanchedalmond;
+}
+
+.st {
+  border: 2px dashed brown;
+  padding: auto;
+  color: rgb(28, 4, 4);
+}
+td {
+  color: rgb(235, 92, 26);
+  text-align: center;
+}
+
+article {
+  font-size: medium;
+  font-style: oblique;
+  color: brown;
+}
+h2 {
+  color: maroon;
+}
+#General_Information {
+  color: maroon;
+}
+h1 {
+  color: brown;
+}
+p {
+  color: brown;
+}
