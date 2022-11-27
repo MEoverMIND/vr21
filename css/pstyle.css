@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+p {
+  color: #202619;
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+.navbar::before {
+  content: "";
+  position: absolute;
+  background-color: rgba(210, 227, 193, 0.05);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+.navbar ul li {
+  font-size: 1.1rem;
+}
+.navbar ul li a {
+  padding: 5px 20px;
+  text-decoration: none;
+  color: #ededde;
+}
+.navbar ul li a:hover {
+  border-bottom: 2px solid #545133;
+}
+
+/* Home Section */
+#home {
+  display: flex;
+  flex-direction: column;
+  height: 650px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #949c74;
+}
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("snakeband.jpg") no-repeat center center/cover;
+  height: 700px;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.8;
+}
+.heading {
+  color: #ededde;
+  font-size: 3rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  transform: scale(1, 1.3);
+}
+
+/* Rank section */
+#rank {
+  display: flex;
+  flex-direction: column;
+  background-color: #b5ca8b;
+}
+#rank h1 {
+  margin: 50px;
+}
+
+/* Missions Section */
+#mission {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #d2e3c1;
+}
+#mission h1 {
+  margin: 60px;
+}
+
+.photo_link {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.photo_link a img {
+  width: 750px;
+  height: 400px;
+  padding: 5px;
+  margin: 5px;
+}
+.photo_link img:hover {
+  background-color: #545133;
+  cursor: pointer;
+}
+
+/* Bio Section */
+#bio {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  height: 100%;
+
+  background-color: #788c64;
+}
+#bio h1 {
+  color: #ededde;
+  margin: 55px;
+}
+/* #bio p {
+  color: #949c74;
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+} */
+.bio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.bio img {
+  width: 500px;
+  height: 400px;
+  padding: 0px 30px;
+}
+/* .name {
+  padding: 10px;
+}
+.name h2 {
+  font-size: 2rem;
+}
+.name p {
+  font-size: 1.2rem;
+} */
+
+/* Codec Section */
+#codec {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+#codec h1 {
+  margin: 50px;
+}
+
+#fox {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  bottom: -20px;
+}
