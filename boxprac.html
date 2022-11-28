@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>boxprac</title>
+
+    <style>
+      .content-box {
+        box-sizing: content-box;
+        width: 300px;
+        padding: 1rem;
+        margin-bottom: 20px;
+        border: solid 5px blue;
+      }
+      .border-box {
+        box-sizing: border-box;
+        width: 300px;
+        padding: 1rem;
+        border: 3px darkblue;
+        position: absolute;
+        top: 0;
+        background-color: beige;
+      }
+
+      .border-box:hover {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content-box">
+      <img
+        width="100%"
+        src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2019/11/cloud-strife-ff7remake-trailer.jpg"
+        alt=""
+      />
+    </div>
+
+    <div class="border-box">
+      <img
+        width="100%"
+        src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/01/final-fantasy-7-remake-sephiroth-life-size-bust.jpg"
+        alt=""
+      />
+    </div>
+  </body>
+</html>
