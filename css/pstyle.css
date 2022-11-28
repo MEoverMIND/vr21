@@ -130,13 +130,7 @@ p {
   color: #ededde;
   margin: 55px;
 }
-/* #bio p {
-  color: #949c74;
-  display: flex;
-  justify-content: center;
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-} */
+
 .bio {
   display: flex;
   align-items: center;
