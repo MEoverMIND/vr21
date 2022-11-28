@@ -141,17 +141,6 @@ p {
   height: 400px;
   padding: 0px 30px;
 }
-/* .name {
-  padding: 10px;
-}
-.name h2 {
-  font-size: 2rem;
-}
-.name p {
-  font-size: 1.2rem;
-} */
-
-/* Codec Section */
 #codec {
   display: flex;
   flex-direction: column;
