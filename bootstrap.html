@@ -16,7 +16,6 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-
     <style>
       .col-md-3 {
         border: solid 1px black;
@@ -24,152 +23,652 @@
     </style>
   </head>
 
+  <!-- TODO: -->
+
+  <!--  Add a navbar with a button that says "Add" -->
+  <!-- when add button is clicked a modal will appear with a form to add new data -->
+  <!-- Form should have an input for image, title and description -->
+  <!-- add save button to add form  -->
+  <!-- replace column text with cards and image and description, title and description -->
+  <!-- Each card will have an update and delete button -->
+  <!-- When update is clicked a modal is opened with form that has update inputs  and a save button -->
+  <!-- When delete button is clicked, a modal will ask "Are you sure you want to delete? - there will be two buttons that say "Confirm or Cancel"" -->
+
   <body>
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand"></a>
+        <form class="d-flex" role="search">
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Add
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Modal title
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                      />
+                      <div id="emailHelp" class="form-text">
+                        We'll never share your email with anyone else.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label"
+                        >Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="exampleInputPassword1"
+                      />
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck1"
+                      />
+                      <label class="form-check-label" for="exampleCheck1"
+                        >Check me out</label
+                      >
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+    <!-- .row*4>.col-md-3*4>p>lorem (4 rows, inside each row colum-3 times it by 4 (to be 12))-->
+    <!-- .container>.row*4>.col-md-3*4>.card>img+div>p>lorem -->
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            quia repellat laborum est in nesciunt. Doloribus vitae laboriosam
-            officia, autem voluptatem sint? Provident, debitis recusandae labore
-            neque perferendis corrupti minus.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Ut magni quos explicabo laboriosam vitae nam, maiores dolorum
-            architecto eligendi, rerum officiis ad! Eius perspiciatis officiis,
-            minima maxime iste voluptatibus culpa, corporis, eos deserunt amet
-            sint quaerat numquam delectus.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Sint a odit laboriosam fugiat blanditiis aliquam aspernatur
-            inventore accusamus in natus ea, quidem quasi amet saepe? Quisquam
-            architecto, ut, natus explicabo fuga laborum temporibus rem aliquam,
-            dignissimos harum a?
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Similique, voluptates exercitationem odit nulla quia tempore maiores
-            sapiente temporibus dolore labore cum asperiores magnam totam
-            quibusdam dolores aperiam aut cupiditate laborum pariatur debitis
-            accusamus quae impedit consequuntur praesentium. Tenetur?
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic iste
-            praesentium, minus perferendis, odio doloremque nulla adipisci saepe
-            ipsum aliquam autem minima, ea qui atque aperiam accusantium!
-            Ducimus, laboriosam fugiat.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Aliquam reiciendis officia rerum alias qui ab numquam molestiae
-            voluptas aliquid. Rerum sint earum id voluptatum laudantium, omnis
-            quidem, optio error, qui vitae nostrum asperiores itaque. Cumque
-            placeat quaerat voluptatum.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Iusto, esse. Totam iusto quam veritatis ratione illo corrupti maxime
-            vel officia odio, ad hic id culpa, ut quis necessitatibus itaque
-            mollitia laboriosam sunt corporis eligendi placeat nostrum. Totam,
-            optio.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Ullam ipsa repudiandae expedita id nulla quae quia, eius quasi
-            corporis odit perspiciatis! Ea mollitia sunt doloremque delectus at
-            sapiente, voluptatem commodi cumque amet nemo eos non natus nam
-            odio!
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus
-            aperiam vel provident iste eius totam excepturi obcaecati vero,
-            natus minima consequuntur facere optio id recusandae facilis
-            eligendi, laborum dicta mollitia.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Blanditiis itaque ex impedit repellat assumenda. Voluptas officiis,
-            animi est qui eligendi reprehenderit non corporis provident eveniet
-            amet veritatis quam perferendis assumenda reiciendis molestias odio
-            tenetur illum quia distinctio exercitationem.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Cum quisquam optio, quidem commodi voluptas neque dolore voluptatum!
-            Facilis eum dolore ab, cupiditate nobis molestiae, ullam sit culpa
-            incidunt assumenda fuga voluptas aspernatur dignissimos facere dicta
-            magni. Dignissimos, eius.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Animi inventore voluptas deserunt, necessitatibus porro rem impedit
-            vero delectus. Consequuntur, nam. Quo doloribus distinctio aut ad
-            illo maiores nostrum nobis, itaque voluptatem error, esse sapiente
-            rerum deleniti quaerat maxime.
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
-            quasi rerum velit iure veniam, exercitationem labore suscipit illum
-            cum deleniti, corrupti incidunt consequatur. Suscipit dolor ipsam
-            debitis itaque, cupiditate sit!
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Minima, asperiores! Ab odio quo, inventore laborum dolore nobis
-            repellat rerum illum nulla corrupti cum, quidem laboriosam aliquam
-            qui nostrum doloribus ullam reprehenderit. Odit neque quaerat vel
-            quis consequuntur nemo?
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Quod, sint reiciendis? Voluptate iusto minus labore accusamus natus,
-            autem est eius. Quod amet incidunt expedita autem cumque! Rem cum
-            neque, excepturi explicabo officia consequatur! Earum debitis rerum
-            nihil molestias?
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-md-3">
-          <p>
-            Error placeat praesentium fugiat? Culpa nihil facilis quis amet unde
-            nemo, nostrum officia. Doloribus, ipsa sit maxime ex eligendi,
-            similique consequatur totam ipsam sapiente saepe sunt, recusandae
-            non sequi eaque!
-          </p>
+          <div class="card">
+            <img
+              src="https://via.placeholder.com/150"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <button
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#updateModal"
+                class="btn btn-primary"
+              >
+                Update
+              </button>
+
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#cancelConfirmModal"
+                type="button"
+                class="btn btn-danger"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <header>
-      <!-- place navbar here -->
-    </header>
-    <main></main>
-    <footer>
-      <!-- place footer here -->
-    </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
