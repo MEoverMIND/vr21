@@ -19,13 +19,30 @@ console.log(people);
 console.log(people.indexOf("Mary"));
 // 7 Write the command that gives the indexOf where “Foo” is located (this should return -1).
 console.log(people);
-console.log(people.indexOf("Foo"));
-// 8 Redefine the people variable with the value you started with.
-// Using the splice command, remove “Devon” from the array and add “
-// Elizabeth” and “Artie”. Your array should look like this when you are done
-// [“Greg”, “Mary”, “Elizabeth”, “Artie”, “James”].
-people = ["Greg", "Mary", "Devon", "James"];
-people.splice(2, 1, "Elizabeth", "Artie");
-console.log(people);
-// 9 Create a new variable called withBob and set it equal to the people array concatenated with the string of “Bob”
-let withBob = people.concat("Bob");
+// console.log(people.indexOf("Foo"));
+// // 8 Redefine the people variable with the value you started with.
+// // Using the splice command, remove “Devon” from the array and add “
+// // Elizabeth” and “Artie”. Your array should look like this when you are done
+// // [“Greg”, “Mary”, “Elizabeth”, “Artie”, “James”].
+// people = ["Greg", "Mary", "Devon", "James"];
+// people.splice(2, 1, "Elizabeth", "Artie");
+// console.log(people);
+// // 9 Create a new variable called withBob and set it equal to the people array concatenated with the string of “Bob”
+// let withBob = people.concat("Bob");
+
+function narcissistic(value) {
+  let testNumber = 0;
+  let stringValue = String(value)
+    .split("")
+    .map((str) => Number(str));
+  console.log(stringValue);
+
+  for (let i = 0; i < stringValue.length; i++) {
+    testNumber += stringValue[i] ** stringValue.length;
+
+    if (testNumber === value) {
+      return true;
+    }
+  }
+  return false;
+}
