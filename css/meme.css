@@ -1,0 +1,14 @@
+.card {
+  position: relative;
+}
+.card-title {
+  position: absolute;
+  top: 1em;
+
+  color: darkgray;
+}
+.card-text {
+  position: absolute;
+  bottom: 10em;
+  color: darkgray;
+}

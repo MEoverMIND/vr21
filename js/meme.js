@@ -1,9 +1,14 @@
+const CARD_DATA_KEY = "key";
+const CARD_TITLE_ATTRIBUTE = "data-meme-title";
+
 const addForm = document.querySelector("#addMemeModal form");
 addForm.addEventListener("submit", handleAddSubmit);
+window.addEventListener("load", addAllCardsToUI);
 
 function handleAddSubmit(evt) {
   // This will stop the default behavior on submission, which is page refresh
   evt.preventDefault();
+
   const closeBtn = document.querySelector('[data-bs-dismiss="modal"]');
   const imageUrl = addForm.elements.imageUrl.value;
   const topText = addForm.elements.topText.value;
@@ -11,6 +16,7 @@ function handleAddSubmit(evt) {
 
   const cardData = { imageUrl, topText, bottomText };
   addCardtoUI(cardData);
+  addCardtoDB(cardData);
 
   addForm.reset();
 
@@ -30,12 +36,60 @@ function addCardtoUI(cardData) {
   </div>
 </div>`;
 
+  // Add data to the image title and description
   cardCol.querySelector(".card-img-top").setAttribute("src", cardData.imageUrl);
   cardCol.querySelector(".card-img-top").setAttribute("alt", cardData.topText);
+
   cardCol.querySelector(".card-title").textContent = cardData.topText;
   cardCol.querySelector(".card-text").textContent = cardData.bottomText;
+
+  // enable delete functionality.
+
+  const deleteBtn = cardCol.querySelector(".btn-danger");
+  deleteBtn.addEventListener("click", deleteCard);
+  cardCol.setAttribute(CARD_TITLE_ATTRIBUTE, cardData.topText);
 
   // add cardCol to the UI
   const cardContainer = document.getElementById("cardContainer");
   cardContainer.append(cardCol);
+}
+
+function addCardtoDB(cardData) {
+  let data = loadDataFromDB();
+  data.push(cardData);
+
+  //save it back to local storage
+  saveDataToDB(data);
+}
+
+function addAllCardsToUI(evt) {
+  let data = loadDataFromDB();
+  console.log(data);
+  data.forEach((cardData) => addCardtoUI(cardData));
+}
+
+function loadDataFromDB() {
+  let data = JSON.parse(localStorage.getItem(CARD_DATA_KEY));
+  if (!data) {
+    data = [];
+  }
+  return data;
+}
+
+function deleteCard(evt) {
+  //see which button we clicked
+  const deleteBtn = evt.target;
+
+  // select the card column that contains it
+  //its like queryselector, but works backwards
+  const cardCol = deleteBtn.closest(".col");
+  const topTextToDelete = cardCol.getAttribute(CARD_TITLE_ATTRIBUTE);
+  let data = loadDataFromDB();
+  data = data.filter((cardData) => cardData.topText !== topTextToDelete);
+  saveDataToDB(data);
+  cardCol.remove();
+}
+
+function saveDataToDB(data) {
+  localStorage.setItem(CARD_DATA_KEY, JSON.stringify(data));
 }
