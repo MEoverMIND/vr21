@@ -5,10 +5,10 @@
   position: absolute;
   top: 1em;
 
-  color: darkgray;
+  color: rgb(0, 0, 0);
 }
 .card-text {
   position: absolute;
   bottom: 10em;
-  color: darkgray;
+  color: rgb(0, 0, 0);
 }
