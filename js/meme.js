@@ -25,16 +25,48 @@ function handleAddSubmit(evt) {
 
 function addCardtoUI(cardData) {
   // Create template element with card in it
+  //   const cardCol = document.createElement("div");
+  //   cardCol.classList.add("col");
+  //   cardCol.innerHTML = `<div class="card" style="width: 18rem">
+  //   <img class="card-img-top"/>
+  //   <div class="card-body">
+  //     <h5 class="card-title">Card title</h5>
+  //     <p class="card-text"></p>
+  //     <button type="button" class="btn btn-danger">Delete</button>
+  //   </div>
+  // </div>`;
+
   const cardCol = document.createElement("div");
-  cardCol.classList.add("col");
-  cardCol.innerHTML = `<div class="card" style="width: 18rem">
-  <img class="card-img-top"/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text"></p>
-    <button type="button" class="btn btn-danger">Delete</button>
-  </div>
-</div>`;
+  cardCol.classList.add("col-lg-3", "col-md-4", "col-sm-6", "d-flex");
+  cardCol.innerHTML = `
+    <div class="card">
+            <img class="card-img-top" />
+             <div class="card-body d-flex flex-column justify-content-between align-item-between">
+                <h5 class="card-title"></h5>
+                <p class="card-text"></p>
+                <div>
+                  <!-- update button -->
+                  <button
+                    type="button"
+                    class="btn btn-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#createModal"
+                  >
+                    Update
+                  </button>
+
+                  <!-- delete button -->
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deleteModal"
+                  >
+                    Delete
+                  </button>
+                </div>
+            </div>
+    </div>`;
 
   // Add data to the image title and description
   cardCol.querySelector(".card-img-top").setAttribute("src", cardData.imageUrl);
